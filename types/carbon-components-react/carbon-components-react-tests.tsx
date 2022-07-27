@@ -7,6 +7,7 @@ import {
     CodeSnippet,
     CodeSnippetType,
     Column,
+    ComposedModal,
     Content,
     DataTable,
     DataTableCustomRenderProps,
@@ -19,6 +20,9 @@ import {
     HeaderMenuItem,
     FileUploader,
     Link,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
     NumberInput,
     NumberInputOnChangeDataVariant,
     NumberInputOnChangeDefaultVariant,
@@ -273,6 +277,25 @@ const codeSnippetNodes = (
 
 interface Row1 extends DataTableRow {
     rowProp: string;
+}
+
+//
+// ComposedModal
+//
+{
+    <ComposedModal
+        danger
+        open
+        preventCloseOnClickOutside
+        selectorPrimaryFocus="input[type=checkbox]"
+        size="lg"
+    >
+        <ModalHeader label="Changes" title="Confirm changes" />
+        <ModalBody hasForm>
+            <Checkbox id="reviewCheckbox" labelText="I have reviewed the changes"/>
+        </ModalBody>
+        <ModalFooter primaryButtonText="Proceed" primaryButtonDisabled={true} />
+    </ComposedModal>
 }
 
 type Header1Key = 'h1' | 'h2' | 'h3';
